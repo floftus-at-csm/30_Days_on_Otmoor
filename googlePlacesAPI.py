@@ -9,7 +9,14 @@ from PIL import Image
 from pathlib import Path
 
 # Define the API Key.
-API_KEY = 'AIzaSyBDQ96Z6bFmhOZH5710G2sWaIdMX9CypfA'
+
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+# Define the API Key.
+# this should be in a hidden file
+API_KEY = os.environ.get("GOOGLE_API_KEY")
 
 # Define the Client
 gmaps = googlemaps.Client(key = API_KEY)
